@@ -18,6 +18,7 @@ public class DashboardPage {
     public DashboardPage() {
         heading.shouldBe(visible);
     }
+
     public int getCardBalance() {
         //val text = cards.filterBy(cssClass("data-test-id='92df3f1c-a033-48e6-8390-206f6b1f56c0'")).findBy(exactText("8000")).text();
         val text = cards.first().text();

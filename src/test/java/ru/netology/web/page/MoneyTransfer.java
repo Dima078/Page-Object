@@ -12,7 +12,7 @@ public class MoneyTransfer {
     private String card1 = "5559 0000 0000 0001";
     private String card2 = "5559 0000 0000 0002";
 
-    public DashboardPage transferMoney (String amount) {
+    public DashboardPage transferMoney(String amount) {
         $$(withText("Пополнить")).first().click();
         $("[data-test-id='amount'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='amount'] input").setValue(amount);
@@ -21,7 +21,7 @@ public class MoneyTransfer {
         return new DashboardPage();
     }
 
-    public DashboardPage defaultMoney (String amount) {
+    public DashboardPage defaultMoney(String amount) {
         $$(withText("Пополнить")).last().click();
         $("[data-test-id='amount'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='amount'] input").setValue(amount);
