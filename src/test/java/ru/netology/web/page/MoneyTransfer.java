@@ -14,7 +14,6 @@ public class MoneyTransfer {
 
     public DashboardPage transferMoney(String amount) {
         $$(withText("Пополнить")).first().click();
-        $("[data-test-id='amount'] input").sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         $("[data-test-id='amount'] input").setValue(amount);
         $("[data-test-id='from'] input").setValue(card2);
         $("[data-test-id='action-transfer']").click();

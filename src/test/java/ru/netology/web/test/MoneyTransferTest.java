@@ -19,7 +19,7 @@ class MoneyTransferTest {
         var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         verificationPage.validVerify(verificationCode);
         new MoneyTransfer().transferMoney("2000");
-        var actual = new DashboardPage().getCardBalance();
+        var actual = new DashboardPage().getCardBalance(0);
         int expected = 12000;
         assertEquals(expected, actual);
         new MoneyTransfer().defaultMoney("2000");
@@ -34,7 +34,7 @@ class MoneyTransferTest {
         var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         verificationPage.validVerify(verificationCode);
         new MoneyTransfer().transferMoney("10000");
-        var actual = new DashboardPage().getCardBalance();
+        var actual = new DashboardPage().getCardBalance(0);
         int expected = 20000;
         assertEquals(expected, actual);
         new MoneyTransfer().defaultMoney("10000");
@@ -48,9 +48,8 @@ class MoneyTransferTest {
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = DataHelper.getVerificationCodeFor(authInfo);
         verificationPage.validVerify(verificationCode);
-        new MoneyTransfer().transferMoney("10000");
-        new MoneyTransfer().transferMoney("2000");
-        var actual = new DashboardPage().getCardBalance();
+        new MoneyTransfer().transferMoney("12000");
+        var actual = new DashboardPage().getCardBalance(0);
         int expected = 22000;
         assertEquals(expected, actual);
         new MoneyTransfer().defaultMoney("12000");
