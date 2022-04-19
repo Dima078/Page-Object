@@ -1,15 +1,19 @@
 package ru.netology.web.page;
 
-import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import lombok.val;
 
 import static com.codeborne.selenide.Condition.*;
+import static com.codeborne.selenide.Selectors.withText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class DashboardPage {
+
+    private SelenideElement firstButton = $$(withText("Пополнить")).first();
+    private SelenideElement lastButton = $$(withText("Пополнить")).last();
+    ;
     private SelenideElement heading = $("[data-test-id=dashboard]");
     private ElementsCollection cards = $$(".list__item div");
     private final String balanceStart = "баланс: ";
@@ -29,6 +33,16 @@ public class DashboardPage {
         val finish = text.indexOf(balanceFinish);
         val value = text.substring(start + balanceStart.length(), finish);
         return Integer.parseInt(value);
+    }
+
+    public MoneyTransfer firstCard() {
+        firstButton.click();
+        return new MoneyTransfer();
+    }
+
+    public MoneyTransfer secondCard() {
+        lastButton.click();
+        return new MoneyTransfer();
     }
 
 }
