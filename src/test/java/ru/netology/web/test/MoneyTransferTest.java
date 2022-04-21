@@ -32,7 +32,7 @@ class MoneyTransferTest {
         assertEquals(expectedCard1, actualCard1);
         assertEquals(expectedCard2, actualCard2);
         new DashboardPage().secondCard();
-        new MoneyTransfer().defaultMoney(money, card1);
+        new MoneyTransfer().transferMoney(money, card1);
     }
 
     @Test
@@ -53,7 +53,7 @@ class MoneyTransferTest {
         assertEquals(expectedCard1, actualCard1);
         assertEquals(expectedCard2, actualCard2);
         new DashboardPage().secondCard();
-        new MoneyTransfer().defaultMoney(money, card1);
+        new MoneyTransfer().transferMoney(money, card1);
     }
 
     @Test
@@ -74,6 +74,6 @@ class MoneyTransferTest {
         assertEquals(expectedCard1, actualCard1);
         assertEquals(expectedCard2, actualCard2);
         new DashboardPage().secondCard();
-        new MoneyTransfer().defaultMoney(money, card1);
+        new MoneyTransfer().transferMoney(money, card1);
     }
 }

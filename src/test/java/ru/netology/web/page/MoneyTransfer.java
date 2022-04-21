@@ -19,13 +19,6 @@ public class MoneyTransfer {
     }
 
     public DashboardPage transferMoney(String amount, String numberCard) {
-        this.amount.setValue(amount);
-        from.setValue(numberCard);
-        action.click();
-        return new DashboardPage();
-    }
-
-    public DashboardPage defaultMoney(String amount, String numberCard) {
         this.amount.sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
         this.amount.setValue(amount);
         from.sendKeys(Keys.chord(Keys.SHIFT, Keys.HOME), Keys.BACK_SPACE);
